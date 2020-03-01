@@ -12,13 +12,23 @@
         <div class="logo">Интернет-магазин</div>
         <div class="cart">
             <form action="#" class="search-form">
-                <input type="text" class="search-field">
-                <button class="btn-search" type="submit">
+                <input type="text" class="search-field" v-model.lazy="search">
+                <button class="btn-search" type="submit" @click="FilterGoods(search, $event)">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
-            <button class="btn-cart" type="button">Корзина</button>
+            <button class="btn-cart" type="button" @click="isVisibleCart=!isVisibleCart">Корзина</button>
+            <h2 v-show="isVisibleCart"></h2>
+            <div v-if="isVisibleCart" class="cart-list">
+                    <h3>название продукта</h3> 
+                    <p>цена продукта</p>
+                    <p>количество Шт.</p>    
+            </div>
+            <div v-else>корзина пуста</h2>
+            
         </div>
+
+        
     </header>
     <main>
         <div class="products">

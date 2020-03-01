@@ -5,7 +5,9 @@ const app = new Vue({
   data: {
     catalogUrl: '/catalogData.json',
     products: [],
-    imgCatalog: 'https://placehold.it/200x150'
+    imgCatalog: 'https://placehold.it/200x150',
+    search: "",
+    isVisibleCart: false,
   },
   methods: {
     getJson(url){
@@ -17,7 +19,10 @@ const app = new Vue({
     },
     addProduct(product){
       console.log(product.id_product);
-    }
+    },
+    FilterGoods(search,event){
+      console.log(search)
+    },
   },
   // хук жизненного цикла
   mounted(){

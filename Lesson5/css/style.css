@@ -7,6 +7,7 @@ header{
     justify-content: space-between;
     color: #fafafa;
     padding: 30px 80px;
+    position: relative;
 }
 button:focus{
     outline: none;
@@ -29,6 +30,9 @@ button:focus{
     background-color: transparent;
     border-color: #fafafa;
     color: #fafafa;
+}
+
+
 }
 .btn-cart, .logo{
     align-self: center;
@@ -169,3 +173,16 @@ img {
     border: none;
     border-bottom: 2px solid #fafafa;
 }
+
+.cart-list {
+    width: 200px;
+    height: auto;
+    border: 1px solid white;
+    display: block;
+    position: absolute;
+    background-color: grey;
+}
+
+
+
+
