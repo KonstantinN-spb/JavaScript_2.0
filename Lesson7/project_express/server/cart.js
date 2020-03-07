@@ -8,10 +8,14 @@ const change = (cart, req) => {
   return JSON.stringify(cart, null, 4);
 };
 const del = (cart, req) => {
-  // homework
+  const find = cart.contents.findIndex(el => el.id_product === +req.params.id);
+  statTracker.eventReg("delete", cart.contents[find].product_name); 
+  cart.contents.splice(find, 1);
+  return JSON.stringify(cart, null, 4);
 };
 
 module.exports = {
   add,
   change,
+  del
 };
